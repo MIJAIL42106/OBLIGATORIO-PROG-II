@@ -3,6 +3,7 @@
 void cargar ( boolean &b ) {
     int valor ;
     printf ("Ingrese 0 si es falso y 1 si es verdadero: ") ;
+    fflush(stdin) ;
     scanf ("%d", &valor ) ;
     if ( valor == 0 )
         b = FALSE ;

@@ -18,8 +18,9 @@ void print ( string s ) {
 }
 // c
 void scan (string &s) {
-    int i = 0;
-    char c;
+    int i = 0 ;
+    char c ;
+    fflush(stdin) ;
     scanf ("%c",&c);
     while ((c != '\n') && (i < MAXS - 1)) {
         s[i] = c;

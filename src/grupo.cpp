@@ -1,17 +1,21 @@
 #include "grupo.h"
 
 void cargarGrupo(grupos &g){
-    printf( "\n Ingrese nombre: " );
-    scan(g.nombre );
-    printf( "\n Ingrese apellido: " );
+    printf( "\nIngrese nombre: " );
+    fflush(stdin);
+    scan(g.nombre);
+    printf( "\nIngrese apellido: " );
+    fflush(stdin);
     scan(g.apellido);
-    printf( "\n Ingrese cedula: " );
+    printf( "\nIngrese cedula: " );
+    fflush(stdin) ;
     scanf("%ld", &g.cedula);
-    printf( "\n Ingrese cantidad de personas: " );
+    printf( "\nIngrese cantidad de personas: " );
+    fflush(stdin) ;
     scanf("%d", &g.cantidad);
-    printf( "\n Ingrese Hora de entrada: " );
+    printf( "\nIngrese Hora de entrada: " );
     hora_cargar(g.hora);
-    printf( "\n ¿Esta afiliado? " );
+    printf( "\nEsta afiliado? " );
     cargar(g.discriminante);
     if(g.discriminante)
         afiliado_cargar(g.datos.fechatipo);
@@ -20,20 +24,20 @@ void cargarGrupo(grupos &g){
 }
 
 void mostrarGrupo(grupos g){
-    printf( "\n El nombre es: " );
+    printf( "\nEl nombre es: " );
     print(g.nombre);
-    printf( "\n El apellido es: " );
+    printf( "\nEl apellido es: " );
     print(g.apellido);
-    printf( "\n La cedula es: %ld", g.cedula);
-    printf( "\n La cantidad de personas es de: %d", g.cantidad);
-    printf( "\n La hora de entrada es: " );
+    printf( "\nLa cedula es: %ld", g.cedula);
+    printf( "\nLa cantidad de personas es de: %d", g.cantidad);
+    printf( "\nLa hora de entrada es: " );
     hora_mostrar(g.hora);
-    printf( "\n Afiliado: " );
+    printf( "\nAfiliado: " );
     mostrar(g.discriminante);
      if(g.discriminante)
         afiliado_mostrar(g.datos.fechatipo);
     else
-        printf ("\n Monto a pagar: %d", g.datos.monto ) ;
+        printf ("\nMonto a pagar: %d", g.datos.monto ) ;
 }   
 
 void R_nombre (grupos g, string &nombre) {
@@ -52,7 +56,7 @@ int R_cantidad (grupos g) {
     return ( g.cantidad ) ;
 }
 
-horario R_hora (grupos g) {
+horario R_horario (grupos g) {
     return ( g.hora ) ;
 }
 

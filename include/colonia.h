@@ -3,11 +3,16 @@
 
     #include "grupo.h"
 
-    const int TAM = 100 ;
+    const int TAM = 3 ;
     typedef struct {
         grupos arre[TAM] ;
         int tope ;
     } colonia ;
+
+    // devuelve TRUE si c.tope = TAM
+    boolean colonia_lleno ( colonia c ) ; 
+    // devuelve TRUE si c.tope = 0
+    boolean colonia_vacio ( colonia c ) ;
 
     // Inicializar tope
     void colonia_inicializar ( colonia &c ) ;
@@ -26,7 +31,7 @@
     // Dada una fecha (dd/mm/aaaa), listar por pantalla cédula, nombre y apellido del docente,cantidad de estudiantes y hora de entrada (hh:mm) de todos los grupos afiliados actualmente registrados y que tengan esa fecha de afiliación.
     void colonia_gruposfecha ( colonia c, fecha f ) ;
     // Calcular el total recaudado hasta el momento por concepto de entradas vendidas.
-    void colonia_calculartotal ( colonia c ) ;
+    long int colonia_calculartotal ( colonia c ) ;
     // Devolver la cantidad de grupos afiliados y no afiliados registrados actualmente.
     void colonia_afnoaf ( colonia c, int &af, int &noaf ) ;
     // Devolver los datos del grupo registrado con la mayor cantidad de estudiantes.

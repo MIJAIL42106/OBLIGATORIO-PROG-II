@@ -10,6 +10,7 @@
     } fecha ;
     
     boolean valida ( fecha x ) ; // bisiestos = mult 4
+    boolean fecha_iguales ( fecha x, fecha y ) ;
     void carga ( fecha &x ) ;
     void desplegado ( fecha x ) ;
     int rdd ( fecha x ) ;
