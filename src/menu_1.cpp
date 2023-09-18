@@ -6,5 +6,6 @@
         printf( "\n3 - Menu listado y consultas." );
         printf( "\n4 - Salir del programa." );
         printf( "\nIngrese una opcion: " ) ;
+        fflush (stdin) ;
         scanf( "%d", &a );
     }

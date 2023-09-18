@@ -3,9 +3,10 @@
 void afiliacion_cargar ( afiliacion &a ) {
     int i ;
     printf ("\nCargar tipo de afiliacion:\n1-Basica / 2-Media / 3-Completa\n") ;
-    scanf ("%d", &i ) ;
-    while ( i != 1 || i != 2 || i != 3 )
+    do {
+        fflush(stdin);
         scanf ("%d", &i ) ;
+    } while ( i != 1 && i != 2 && i != 3 ) ;
     switch ( i ) {
         case 1 :
             a = BASICA ;

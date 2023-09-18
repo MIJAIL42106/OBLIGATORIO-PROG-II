@@ -2,7 +2,9 @@
 
 void afiliado_cargar ( afiliado &af ) {
     afiliacion_cargar ( af.tipo ) ;
-    carga ( af.f ) ;
+    do {
+        carga ( af.f ) ;
+    } while ( valida ( af.f) ) ;
 }
 
 void afiliado_mostrar ( afiliado af ) {

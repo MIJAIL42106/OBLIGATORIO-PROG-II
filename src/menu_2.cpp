@@ -9,6 +9,7 @@
         printf ("\n6 - Cantidad de grupos afiliados y no afiliados." );
         printf ("\n7 - Grupo con mayor cantidad de estudiante." );
         printf ("\n8 - Volver al menu principal." );
-        printf ("Ingrese una opcion: " );
+        printf ("\nIngrese una opcion: " );
+        fflush (stdin) ;
         scanf ("%d", &a );
     }

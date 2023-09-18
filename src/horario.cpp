@@ -8,10 +8,14 @@ boolean hora_valida ( horario h ) {
 }
 
 void hora_cargar ( horario &h ) {
-    printf ("Ingrese Hora: ") ;
+    fflush(stdin);
+    printf ("\nIngrese Hora: ") ;
+    fflush(stdin);
     scanf ("%d", &h.h ) ;
     printf ("Ingrese Minutos: ") ;
+    fflush(stdin);
     scanf ("%d", &h.m ) ;
+    
 }
 
 void hora_mostrar ( horario h ) {

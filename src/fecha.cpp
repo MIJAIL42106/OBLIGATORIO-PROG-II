@@ -45,14 +45,21 @@ boolean valida ( fecha x ) {
     return ( valida ) ;
 }
 
+boolean fecha_iguales ( fecha x, fecha y ) {
+    boolean iguales = FALSE ;
+    if ( raa( x ) == raa( y ) && rdd( x ) == rdd( y ) && rmm( x ) == rmm( y ) )
+        iguales = TRUE ;    
+    return ( iguales ) ;
+}
+
 void carga ( fecha &x ) {
     printf ("Ingrese Fecha:\n dd mm aa\n") ;
-fflush(stdin) ;
+    fflush(stdin) ;
     //scanf ("%d/%d/%d", &x.dia, &x.mes, &x.anio ) ;
     scanf ("%d", &x.dd) ;
-fflush(stdin) ;
+    fflush(stdin) ;
     scanf ("%d", &x.mm) ;
-fflush(stdin) ;
+    fflush(stdin) ;
     scanf ("%d", &x.aa ) ;
 }
 
