@@ -56,7 +56,7 @@ void colonia_desplegar ( colonia c ) {
         printf("\nApellido: ");
         R_apellido( c.arre[i], s );
         print( s );
-        printf("\nCantidad de esdtudaintes: %d \n", R_cantidad(c.arre[i] ) );
+        printf("\nCantidad de esdtudaintes: %d \nHora: ", R_cantidad(c.arre[i] ) );
         hora_mostrar(R_horario(c.arre[i]));
         printf("\n\n");
     }
@@ -67,6 +67,7 @@ void colonia_detallargrupo ( colonia c, long int cedula ) {
     while ( c.arre[i].cedula != cedula && i<c.tope ) 
         i++ ;
     mostrarGrupo ( c.arre[i] ) ;
+    printf("\n");
 }
 
 void colonia_gruposhora ( colonia c, int h ) {
@@ -74,7 +75,7 @@ void colonia_gruposhora ( colonia c, int h ) {
     string s ;
     for ( i=0; i<c.tope; i++ )
         if ( R_hora ( c.arre[i].hora ) == h ) {
-            printf ("Cedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
+            printf ("\nCedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
             R_nombre ( c.arre[i], s ) ;
             print ( s ) ;
             printf ("\nApellido: ") ;
@@ -90,7 +91,7 @@ void colonia_gruposfecha ( colonia c, fecha f ) {
     string s ;
     for ( i=0; i<c.tope; i++ )
         if ( fecha_iguales ( R_fecha ( R_fechatipo ( c.arre[i] ) ), f ) && c.arre[i].discriminante) { 
-            printf ("Cedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
+            printf ("\nCedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
             R_nombre ( c.arre[i], s ) ;
             print ( s ) ;
             printf ("\nApellido: ") ;
@@ -127,5 +128,6 @@ void colonia_grupogrande (colonia c) {
             max = c.arre[i].cantidad ;
             imax = i ;
         }
-    colonia_detallargrupo ( c, c.arre[imax].cedula ) ;
+    mostrarGrupo ( c.arre[imax] ) ;
+    //colonia_detallargrupo ( c, c.arre[imax].cedula ) ;
 }

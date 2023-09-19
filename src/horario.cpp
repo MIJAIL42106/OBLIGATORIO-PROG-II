@@ -19,7 +19,7 @@ void hora_cargar ( horario &h ) {
 }
 
 void hora_mostrar ( horario h ) {
-    printf ("Hora: %02d:%02d", h.h, h.m ) ;
+    printf ("%02d:%02d", h.h, h.m ) ;
 }
 
 int R_hora ( horario h ) {

@@ -1,21 +1,25 @@
 #include "grupo.h"
 
 void cargarGrupo(grupos &g){
-    printf( "\nIngrese nombre: " );
+    printf("\nIngrese nombre: ");
     fflush(stdin);
     scan(g.nombre);
-    printf( "\nIngrese apellido: " );
+    printf("Ingrese apellido: ");
     fflush(stdin);
     scan(g.apellido);
-    printf( "\nIngrese cedula: " );
+    printf("Ingrese cedula: ");
     fflush(stdin) ;
     scanf("%ld", &g.cedula);
-    printf( "\nIngrese cantidad de personas: " );
+    printf("Ingrese cantidad de personas: ");
     fflush(stdin) ;
     scanf("%d", &g.cantidad);
-    printf( "\nIngrese Hora de entrada: " );
-    hora_cargar(g.hora);
-    printf( "\nEsta afiliado? " );
+    printf("Ingrese Hora de entrada: ");
+    do {
+        hora_cargar(g.hora);
+        if ( !hora_valida (g.hora) ) 
+            printf("ERROR: Ingrese hora valida.\n") ;
+    } while ( !hora_valida (g.hora) );
+    printf( "Esta afiliado? " );
     cargar(g.discriminante);
     if(g.discriminante)
         afiliado_cargar(g.datos.fechatipo);
@@ -34,10 +38,10 @@ void mostrarGrupo(grupos g){
     hora_mostrar(g.hora);
     printf( "\nAfiliado: " );
     mostrar(g.discriminante);
-     if(g.discriminante)
+    if(g.discriminante)
         afiliado_mostrar(g.datos.fechatipo);
     else
-        printf ("\nMonto a pagar: %d", g.datos.monto ) ;
+        printf ("Monto a pagar: %d", g.datos.monto ) ;
 }   
 
 void R_nombre (grupos g, string &nombre) {
