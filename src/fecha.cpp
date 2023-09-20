@@ -53,14 +53,18 @@ boolean fecha_iguales ( fecha x, fecha y ) {
 }
 
 void carga ( fecha &x ) {
-    printf ("Ingrese Fecha:\n dd mm aa\n") ;
+    printf ("Ingrese Fecha (dd mm aa): ") ;
     fflush(stdin) ;
-    //scanf ("%d/%d/%d", &x.dia, &x.mes, &x.anio ) ;
+    scanf ("%d %d %d", &x.dd, &x.mm, &x.aa ) ;      // dejar como estaba si no funciona
+    /*
+    printf("Ingrese dia: ");
     scanf ("%d", &x.dd) ;
     fflush(stdin) ;
+    printf("Ingrese mes: ");
     scanf ("%d", &x.mm) ;
     fflush(stdin) ;
-    scanf ("%d", &x.aa ) ;
+    printf("Ingrese anio: ");
+    scanf ("%d", &x.aa ) ; */
 }
 
 void desplegado ( fecha x ) {

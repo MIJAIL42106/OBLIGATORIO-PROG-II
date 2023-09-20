@@ -42,6 +42,7 @@ void mostrarGrupo(grupos g){
         afiliado_mostrar(g.datos.fechatipo);
     else
         printf ("Monto a pagar: %d", g.datos.monto ) ;
+    printf("\n");
 }   
 
 void R_nombre (grupos g, string &nombre) {

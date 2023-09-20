@@ -37,9 +37,9 @@ void colonia_insertar ( colonia &c, grupos g ) {
     c.tope++ ;
 }
 
-void colonia_eliminar ( colonia &c, long int cedula ) {
-    int i = 0 ;        
-    while ( c.arre[i].cedula == cedula )
+void colonia_eliminar ( colonia &c, long int ced ) {
+    int i = 0 ;    
+    while ( !(c.arre[i].cedula == ced) )
         i++ ;
     c.tope-- ;
     for ( ; i< c.tope; i++ ) 
@@ -67,7 +67,6 @@ void colonia_detallargrupo ( colonia c, long int cedula ) {
     while ( c.arre[i].cedula != cedula && i<c.tope ) 
         i++ ;
     mostrarGrupo ( c.arre[i] ) ;
-    printf("\n");
 }
 
 void colonia_gruposhora ( colonia c, int h ) {

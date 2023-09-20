@@ -10,6 +10,7 @@ void afiliado_cargar ( afiliado &af ) {
 void afiliado_mostrar ( afiliado af ) {
     printf ("Datos de afiliacion: \nTipo: ") ;
     afiliacion_mostrar ( af.tipo ) ;
+    printf ("\n") ;
     desplegado ( af.f ) ;
 }
 

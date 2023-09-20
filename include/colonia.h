@@ -21,7 +21,7 @@
     // Insertar un nuevo grupo no registrado actualmente.
     void colonia_insertar ( colonia &c, grupos g ) ;
     // Dada la cédula del docente a cargo de un grupo, registrar su partida, eliminándolo del sistema. Los restantes grupos deben permanecer almacenados en el orden que están.
-    void colonia_eliminar ( colonia &c, long int cedula ) ;
+    void colonia_eliminar ( colonia &c, long int ced ) ;
     // Listar por pantalla cédula, nombre y apellido del docente, cantidad de estudiantes y hora de entrada (hh:mm) de todos los grupos registrados actualmente en la colonia
     void colonia_desplegar ( colonia c ) ;
     //Dada la cédula del docente a cargo de un grupo, listar detalladamente todos los datos del grupo correspondiente.

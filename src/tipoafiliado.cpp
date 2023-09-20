@@ -2,7 +2,7 @@
 
 void afiliacion_cargar ( afiliacion &a ) {
     int i ;
-    printf ("\nCargar tipo de afiliacion:\n1-Basica / 2-Media / 3-Completa\n") ;
+    printf ("\nCargar tipo de afiliacion:\n1-Basica / 2-Media / 3-Completa\nOpcion: ") ;
     do {
         fflush(stdin);
         scanf ("%d", &i ) ;
