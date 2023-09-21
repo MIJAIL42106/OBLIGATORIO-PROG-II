@@ -14,7 +14,7 @@ void cargar ( boolean &b ) {
             break ;
         default : 
             b = TRUE ;
-            printf ("\nATENCION: Valor fuera de rango, seteado en verdadero por predeterminado.\n") ;
+            printf ("\nADVERTENCIA: Valor fuera de rango, seteado en verdadero por predeterminado.\n") ;
     }
 } 
 

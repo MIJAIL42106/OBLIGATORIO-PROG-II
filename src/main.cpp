@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdlib.h>         // quitar
 #include "colonia.h"
 #include "menu_1.h"
 #include "menu_2.h"
@@ -19,17 +19,17 @@ int main() {
                 printf ("Carga de un grupo: ") ;
                 cargarGrupo(grup) ;
                 if (colonia_lleno(colon))
-                    printf ("\nERROR: Todas las plazas estan ocupadas.\n") ;
+                    printf ("\nERROR: Todas las plazas estan ocupadas.\n\n") ;
                 else 
                     if (colonia_existe(colon, grup.cedula))
-                        printf ("\nERROR: Ya hay un grupo cargado con esa cedula.\n") ;
+                        printf ("\nERROR: Ya hay un grupo cargado con esa cedula.\n\n") ;
                     else {
                         colonia_insertar(colon, grup) ;
                         printf ("\n") ;
                     }
                 break ;
             case 2 :
-                printf ("Ingrese cedula de grupo a registrar partida:\n") ;
+                printf ("Ingrese cedula de grupo a registrar partida: ") ;
                 fflush(stdin) ;
                 scanf ("%ld", &ced) ;
                 if (colonia_vacio(colon))
@@ -48,11 +48,11 @@ int main() {
                     case 1 :
                         // Listado de todos los grupos registrados." );
                         if (colonia_vacio(colon))
-                            printf ("\nERROR: La colonia se encuentra vacia.\n") ;
+                            printf ("\nERROR: La colonia se encuentra vacia.\n\n") ;
                         else
                             colonia_desplegar(colon) ;
                         break ;
-                    case 2: // no da el grupo correcto
+                    case 2: 
                         // Listado detallado de un grupo." );
                         printf ("Ingrese cedula de grupo a detallar: ") ;
                         fflush(stdin) ;
@@ -74,11 +74,14 @@ int main() {
                         // fflush(stdin) ;
                         horara.h = horo ;
                         horara.m = 0 ;
-                        if (hora_valida(horara)) {
-                            colonia_gruposhora(colon, horo) ;
-                            printf ("\n\n") ;
-                        } else
-                            printf ("\nERROR: Hora no valida.\n\n") ;
+                        if (colonia_vacio(colon))
+                            printf ("\nERROR: La colonia se encuentra vacia.\n") ;
+                        else 
+                            if (hora_valida(horara)) {
+                                colonia_gruposhora(colon, horo) ;
+                                printf ("\n\n") ;
+                            } else
+                                printf ("\nERROR: Hora no valida.\n\n") ;
                         break ;
                     case 4 :
                         // Listado de grupos afiliados con fecha de afiliacion." );
@@ -103,7 +106,10 @@ int main() {
                     case 7 :
                         // Grupo con mayor cantidad de estudiante." );
                         printf ("Los datos del grupo con mayor numero de estudiante es: \n") ;
-                        colonia_grupogrande(colon) ;
+                        if (colonia_vacio(colon))
+                            printf ("\nERROR: La colonia se encuentra vacia.\n\n") ;
+                        else 
+                            colonia_grupogrande(colon) ;
                         break ;
 
                     case 8 :
@@ -113,6 +119,6 @@ int main() {
         }
     } while (op != 4) ;
 
-    system ("pause") ;
+    system ("pause") ;      // quitar
     return 0 ;
 }

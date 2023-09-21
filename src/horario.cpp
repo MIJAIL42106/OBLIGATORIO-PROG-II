@@ -2,7 +2,7 @@
 
 boolean hora_valida ( horario h ) {
     boolean valida = FALSE ;
-    if ( h.h >= 0 && h.h <= 24 && h.m >= 0 && h.m < 60 )    
+    if ( h.h >= 0 && h.h < 24 && h.m >= 0 && h.m < 60 )    
         valida = TRUE ;
     return ( valida ) ;
 }

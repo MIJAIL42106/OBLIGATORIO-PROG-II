@@ -56,7 +56,7 @@ void colonia_desplegar ( colonia c ) {
         printf("\nApellido: ");
         R_apellido( c.arre[i], s );
         print( s );
-        printf("\nCantidad de esdtudaintes: %d \nHora: ", R_cantidad(c.arre[i] ) );
+        printf("\nCantidad de estudiantes: %d \nHora: ", R_cantidad(c.arre[i] ) );
         hora_mostrar(R_horario(c.arre[i]));
         printf("\n\n");
     }
@@ -72,8 +72,10 @@ void colonia_detallargrupo ( colonia c, long int cedula ) {
 void colonia_gruposhora ( colonia c, int h ) {
     int i ;
     string s ;
+    boolean hay = FALSE ;
     for ( i=0; i<c.tope; i++ )
         if ( R_hora ( c.arre[i].hora ) == h ) {
+            hay = TRUE ;
             printf ("\nCedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
             R_nombre ( c.arre[i], s ) ;
             print ( s ) ;
@@ -83,13 +85,17 @@ void colonia_gruposhora ( colonia c, int h ) {
             printf ("\nEstudiantes: %d\nHora: ", R_cantidad ( c.arre[i] ) ) ;
             hora_mostrar ( R_horario ( c.arre[i] ) ) ;
         }
+    if (!hay)
+        printf ("\nADVERTENCIA: No se ha encontrado ningun grupo ingresado a esa hora.\n") ;
 }
 
 void colonia_gruposfecha ( colonia c, fecha f ) {
     int i ;
     string s ;
+    boolean hay = FALSE ;
     for ( i=0; i<c.tope; i++ )
         if ( fecha_iguales ( R_fecha ( R_fechatipo ( c.arre[i] ) ), f ) && c.arre[i].discriminante) { 
+            hay = TRUE ;
             printf ("\nCedula: %ld\nNombre: ", R_cedula ( c.arre[i] ) ) ;
             R_nombre ( c.arre[i], s ) ;
             print ( s ) ;
@@ -99,6 +105,8 @@ void colonia_gruposfecha ( colonia c, fecha f ) {
             printf ("\nEstudiantes: %d\nHora: ", R_cantidad ( c.arre[i] ) ) ;
             hora_mostrar ( R_horario ( c.arre[i] ) ) ;
         }
+    if (!hay)
+        printf ("\nADVERTENCIA: No se ha encontrado ningun grupo con esa fecha de afiliacion.") ;
 }
 
 long int colonia_calculartotal ( colonia c ) {
