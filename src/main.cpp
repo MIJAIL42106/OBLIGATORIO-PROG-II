@@ -105,11 +105,11 @@ int main() {
                         break ;
                     case 7 :
                         // Grupo con mayor cantidad de estudiante." );
-                        printf ("Los datos del grupo con mayor numero de estudiante es: \n") ;
+                        printf ("Los datos del grupo con mayor numero de estudiantes es: \n") ;
                         if (colonia_vacio(colon))
                             printf ("\nERROR: La colonia se encuentra vacia.\n\n") ;
                         else 
-                            colonia_grupogrande(colon) ;
+                            mostrarGrupo ( colonia_grupogrande(colon) ) ; // var tipo grupo =, almacenar funcion 
                         break ;
 
                     case 8 :

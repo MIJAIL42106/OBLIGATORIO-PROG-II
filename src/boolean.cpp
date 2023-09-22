@@ -5,17 +5,10 @@ void cargar ( boolean &b ) {
     printf ("Ingrese 0 si es falso y 1 si es verdadero: ") ;
     fflush(stdin) ;
     scanf ("%d", &valor ) ;
-    switch ( valor ) {          // if else y hacemos un do while hasta que se ingrese 0 o 1 asi se repite en caso de darle a otro valor
-        case 0 :
-            b = FALSE ;
-            break ;
-        case 1 :
-            b = TRUE ;
-            break ;
-        default : 
-            b = TRUE ;
-            printf ("\nADVERTENCIA: Valor fuera de rango, seteado en verdadero por predeterminado.\n") ;
-    }
+    if ( valor == 0 )
+        b = FALSE ;
+    else 
+        b = TRUE ;
 } 
 
 void mostrar ( boolean b ) {

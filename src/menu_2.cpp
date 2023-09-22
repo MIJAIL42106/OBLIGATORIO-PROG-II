@@ -7,7 +7,7 @@
         printf ("\n4 - Listado de grupos afiliados con fecha de afiliacion." );
         printf ("\n5 - Total recaudado hasta el momento." );
         printf ("\n6 - Cantidad de grupos afiliados y no afiliados." );
-        printf ("\n7 - Grupo con mayor cantidad de estudiante." );
+        printf ("\n7 - Grupo con mayor cantidad de estudiantes." );
         printf ("\n8 - Volver al menu principal." );
         printf ("\nIngrese una opcion: " );
         fflush (stdin) ;

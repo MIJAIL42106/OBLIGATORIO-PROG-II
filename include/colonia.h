@@ -35,6 +35,6 @@
     // Devolver la cantidad de grupos afiliados y no afiliados registrados actualmente.
     void colonia_afnoaf ( colonia c, int &af, int &noaf ) ;
     // Devolver los datos del grupo registrado con la mayor cantidad de estudiantes.
-    void colonia_grupogrande ( colonia c ) ;
+    grupos colonia_grupogrande ( colonia c ) ;
 
 #endif

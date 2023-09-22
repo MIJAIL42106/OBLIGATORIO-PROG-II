@@ -128,13 +128,13 @@ void colonia_afnoaf (colonia c, int &af, int &noaf ) {
             noaf++;    
 }
 
-void colonia_grupogrande (colonia c) {
+grupos colonia_grupogrande (colonia c) { // funcion que devuelva un grupo
     int i, max=0, imax ;
     for ( i=0; i<c.tope; i++ )
         if ( c.arre[i].cantidad > max ) {
             max = c.arre[i].cantidad ;
             imax = i ;
         }
-    mostrarGrupo ( c.arre[imax] ) ;
+    return ( c.arre[imax] ) ;
     //colonia_detallargrupo ( c, c.arre[imax].cedula ) ;
 }
