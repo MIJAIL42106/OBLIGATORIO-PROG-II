@@ -1,4 +1,4 @@
-#include <stdlib.h>         // quitar
+#include <stdlib.h>
 #include "colonia.h"
 #include "menu_1.h"
 #include "menu_2.h"
@@ -11,6 +11,8 @@ int main() {
     horario horara ;
     fecha fec ;
 
+    colonia_inicializar ( colon ) ;
+
     do {
         desplegarmenu1(op) ;
         printf ("\n") ;
@@ -21,7 +23,7 @@ int main() {
                 if (colonia_lleno(colon))
                     printf ("\nERROR: Todas las plazas estan ocupadas.\n\n") ;
                 else 
-                    if (colonia_existe(colon, grup.cedula))
+                    if (colonia_existe(colon, R_cedula(grup)))
                         printf ("\nERROR: Ya hay un grupo cargado con esa cedula.\n\n") ;
                     else {
                         colonia_insertar(colon, grup) ;

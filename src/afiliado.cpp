@@ -4,14 +4,14 @@ void afiliado_cargar ( afiliado &af ) {
     afiliacion_cargar ( af.tipo ) ;
     do {
         carga ( af.f ) ;
-    } while ( !valida ( af.f) ) ;
+    } while ( !valida ( R_fecha(af) ) ) ;
 }
 
 void afiliado_mostrar ( afiliado af ) {
     printf ("Datos de afiliacion: \nTipo: ") ;
-    afiliacion_mostrar ( af.tipo ) ;
+    afiliacion_mostrar ( R_tipo(af) ) ;
     printf ("\n") ;
-    desplegado ( af.f ) ;
+    desplegado ( R_fecha(af) ) ;
 }
 
 afiliacion R_tipo ( afiliado af ) {

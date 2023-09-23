@@ -16,32 +16,35 @@ void cargarGrupo(grupos &g){
     printf("Ingrese Hora de entrada: ");
     do {
         hora_cargar(g.hora);
-        if ( !hora_valida (g.hora) ) 
+        if ( !hora_valida (R_horario(g)) ) 
             printf("ERROR: Ingrese hora valida.\n") ;
-    } while ( !hora_valida (g.hora) );
+    } while ( !hora_valida (R_horario(g)) );
     printf( "Esta afiliado? " );
-    cargar(g.discriminante);
-    if(g.discriminante)
+    cargar( g.discriminante );
+    if(R_discriminante(g))
         afiliado_cargar(g.datos.fechatipo);
     else
         g.datos.monto = g.cantidad * ENTRADA ;
 }
 
-void mostrarGrupo(grupos g){
+void mostrarGrupo(grupos g) {
+    string s ;
     printf( "\nEl nombre es: " );
-    print(g.nombre);
+    R_nombre(g, s);
+    print(s);
     printf( "\nEl apellido es: " );
-    print(g.apellido);
-    printf( "\nLa cedula es: %ld", g.cedula);
-    printf( "\nLa cantidad de personas es de: %d", g.cantidad);
+    R_apellido(g, s);
+    print(s);
+    printf( "\nLa cedula es: %ld", R_cedula(g));
+    printf( "\nLa cantidad de personas es de: %d", R_cantidad(g));
     printf( "\nLa hora de entrada es: " );
-    hora_mostrar(g.hora);
+    hora_mostrar(R_horario(g));
     printf( "\nAfiliado: " );
-    mostrar(g.discriminante);
-    if(g.discriminante)
-        afiliado_mostrar(g.datos.fechatipo);
+    mostrar(R_discriminante(g));
+    if(R_discriminante(g))
+        afiliado_mostrar(R_fechatipo(g));
     else
-        printf ("Monto a pagar: %d", g.datos.monto ) ;
+        printf ("Monto a pagar: %d", R_monto(g));
     printf("\n");
 }   
 

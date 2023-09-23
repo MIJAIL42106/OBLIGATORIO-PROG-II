@@ -3,7 +3,7 @@
 
     #include "grupo.h"
 
-    const int TAM = 3 ;
+    const int TAM = 5 ;
     typedef struct {
         grupos arre[TAM] ;
         int tope ;
