@@ -39,8 +39,10 @@ void colonia_eliminar ( colonia &c, long int ced ) {
     while ( !(R_cedula(c.arre[i]) == ced) ) 
         i++ ;
     c.tope-- ;
-    for ( ; i< c.tope; i++ ) 
+    for ( ; i< c.tope; i++ ) {
         c.arre[i] = c.arre[i+1] ;
+    }
+    printf("\nEl grupo a sido eliminado de la colonia.\n") ;
 }
 
 void colonia_desplegar ( colonia c ) {
@@ -103,7 +105,7 @@ void colonia_gruposfecha ( colonia c, fecha f ) {
             hora_mostrar ( R_horario ( c.arre[i] ) ) ;
         }
     if (!hay)
-        printf ("\nADVERTENCIA: No se ha encontrado ningungrupo con esa fecha de afiliacion.") ;
+        printf ("\nADVERTENCIA: No se ha encontrado ningun grupo con esa fecha de afiliacion.") ;
 }
 
 long int colonia_calculartotal ( colonia c ) {

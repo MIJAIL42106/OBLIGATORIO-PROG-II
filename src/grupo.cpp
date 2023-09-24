@@ -24,7 +24,7 @@ void cargarGrupo(grupos &g){
     if(R_discriminante(g))
         afiliado_cargar(g.datos.fechatipo);
     else
-        g.datos.monto = g.cantidad * ENTRADA ;
+        g.datos.monto = R_cantidad(g) * ENTRADA ;
 }
 
 void mostrarGrupo(grupos g) {

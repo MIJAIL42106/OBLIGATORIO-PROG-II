@@ -19,8 +19,10 @@
     // Dada la cédula de un docente, determinar si existe algún grupo actualmente registrado con dicha cédula.
     boolean colonia_existe ( colonia c, long int cedula ) ;
     // Insertar un nuevo grupo no registrado actualmente.
+    // precond: colonia no llena, no existe grupo con esa cedula.
     void colonia_insertar ( colonia &c, grupos g ) ;
     // Dada la cédula del docente a cargo de un grupo, registrar su partida, eliminándolo del sistema. Los restantes grupos deben permanecer almacenados en el orden que están.
+    // precond: existe grupo con esa cedula.
     void colonia_eliminar ( colonia &c, long int ced ) ;
     // Listar por pantalla cédula, nombre y apellido del docente, cantidad de estudiantes y hora de entrada (hh:mm) de todos los grupos registrados actualmente en la colonia
     void colonia_desplegar ( colonia c ) ;
